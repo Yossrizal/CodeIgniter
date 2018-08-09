@@ -1,0 +1,9 @@
+config.php -> base_url
+    $config['base_url'] = "http://".$_SERVER['HTTP_HOST'];
+    $config['base_url'] .= preg_replace('@/+$@','',dirname($_SERVER['SCRIPT_NAME'])).'/';
+    
+.htaccess
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
