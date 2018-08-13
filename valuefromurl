@@ -1,0 +1,15 @@
+<a href="http://www.test.com/update_record_row/6356/"> ID </a>
+
+public function update_record_row($id)
+{
+    echo "Id is :".$id;
+}
+
+
+Use URI segment
+
+// if URL -http://www.test.com/update_record_row/id/6356/
+$id = $this->uri->segment(3);
+
+// if URL -http://www.test.com/update_record_row/6356/
+$id = $this->uri->segment(2);
